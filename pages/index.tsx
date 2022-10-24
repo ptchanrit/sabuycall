@@ -17,10 +17,13 @@ const Home: NextPage = () => {
   const [seconds, setSeconds] = useState<number>(0);
   const [message, setMessage] = useState<string>("");
 
-  const timeToDays = time * 60 * 60 * 24 * 1000;
+  // const timeToDays = time * 60 * 60 * 24 * 1000;
+  const timeToDays: number = new Date('11 /11/2022 11:11:11').getTime() - new Date().getTime();
 
-  let countDownDate = new Date().getTime() + timeToDays;
+  // let countDownDate = timeToDays - new Date().getTime()
+  let countDownDate = timeToDays + new Date().getTime();
 
+  console.log(timeToDays)
 
   useEffect(() => {
 
